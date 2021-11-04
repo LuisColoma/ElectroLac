@@ -23,6 +23,8 @@
 
 		<script scr="{% static 'lib/sweetalert2-9.10.0/sweetalert2.all.min.js' %}"></script>
 
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     </head>
 	<body>
 		<!-- HEADER -->
@@ -122,8 +124,8 @@
     				errors += '{{ error }}\n';
   				{% endfor %}
   				Swal.fire({
-    				title: 'Error!',
-    				text: errors,
+    				title: 'ERROR',
+    				text: 'Por favor, introduzca un nombre de usuario y contraseña correctos. Considere que ambos campos son sensibles al uso de mayúsculas.',
     				icon: 'error'
   				});
 			{% endif %}
