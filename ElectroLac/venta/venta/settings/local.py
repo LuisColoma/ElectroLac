@@ -33,6 +33,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
     "/Users/lcolo/Desktop/P_Final_Proyectos/ElectroLac/static",
+    "C:\ProyectoFinal\ElectroLac\ElectroLac\static",
+ 
 ]
 
 LOGIN_REDIRECT_URL = 'login'
