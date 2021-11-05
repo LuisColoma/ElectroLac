@@ -16,4 +16,5 @@ from apps.erp.mixins import ValidatePermissionRequiredMixin
 
 
 def create(request):
+
     return render(request, 'account/registrar.html')

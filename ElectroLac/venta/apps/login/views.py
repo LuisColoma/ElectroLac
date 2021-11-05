@@ -5,36 +5,37 @@ from django.contrib.auth import login
 from django.urls import reverse_lazy
 from django.views.generic import FormView
 
-
+from axes.decorators import axes_dispatch # Funcion para usar watch_login en la funcion
+from django.utils.decorators import method_decorator # Permite usar decoradores
 # Create your views here.
 
 
 
-class LoginFormView(LoginView):
-    template_name = 'login.html'
+#class LoginFormView(LoginView):
+    #template_name = 'login.html'
 
-    def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            return redirect('account')
-        return super.dispatch(request, *args, **kwargs)
+    #def dispatch(self, request, *args, **kwargs):
+        #if request.user.is_authenticated:
+            #return redirect('account')
+        #return super.dispatch(request, *args, **kwargs)
 
-    def get_context_data(self, **kwargs):
-        context= super().get_context_data(**kwargs)
-        context['title'] = 'Iniciar Sesión'
-        return context
+    #def get_context_data(self, **kwargs):
+        #context= super().get_context_data(**kwargs)
+        #context['title'] = 'Iniciar Sesión'
+        #return context
 
 
-class LoginFormView2(FormView):
-    form_class = AuthenticationForm
-    template_name = 'login.html'
-    success_url = reverse_lazy('account')
+#class LoginFormView2(FormView):
+    #form_class = AuthenticationForm
+    #template_name = 'login.html'
+    #success_url = reverse_lazy('account')
 
-    def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            return redirect('account')
-        return super().dispatch(request, *args, **kwargs)
+    #def dispatch(self, request, *args, **kwargs):
+        #if request.user.is_authenticated:
+            #return redirect('account')
+        #return super().dispatch(request, *args, **kwargs)
 
-    def form_valid(self, form):
-        login(self.request, form.get_user())
-        return HttpResponseRedirect(self.success_url)
+    #def form_valid(self, form):
+        #login(self.request, form.get_user())
+        #return HttpResponseRedirect(self.success_url)
 

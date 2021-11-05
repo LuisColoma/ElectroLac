@@ -37,7 +37,7 @@ STATICFILES_DIRS = [
  
 ]
 
-LOGIN_REDIRECT_URL = 'login'
+LOGIN_REDIRECT_URL = 'account'
 
 LOGOUT_REDIRECT_URL = 'login'
 
