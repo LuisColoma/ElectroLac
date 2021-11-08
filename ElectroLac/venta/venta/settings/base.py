@@ -25,8 +25,8 @@ LOCAL_APPS = [
     'apps.events',
     'apps.login',
     'apps.account',
-    'apps.erp',
-    #'apps.user',
+
+    'apps.registro',
 
 ]
  

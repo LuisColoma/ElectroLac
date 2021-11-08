@@ -9,12 +9,7 @@ from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, CreateView
-
-#from apps.account.forms import UserForm
-
 # Create your views here.
 
-
-def create(request):
-
-    return render(request, 'account/registrar.html')
+def registro(request):
+   return render(request, 'registration/registrar.html')

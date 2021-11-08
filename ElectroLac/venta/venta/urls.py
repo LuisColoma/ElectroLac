@@ -25,7 +25,8 @@ urlpatterns = [
     path("login/", include("apps.login.urls")),
     path("logout/", include("apps.login.urls")),
     path("create/", include("apps.account.urls")),
-    path('admin/', admin.site.urls),
+      path("registro/", include("apps.registro.urls")),
+   # path('admin/', admin.site.urls),
     #path('',include('user.urls')),
 
 
