@@ -1,5 +1,5 @@
-{% load static %}
 
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,8 +21,6 @@
 		<!-- Hoja de estilo personalizada -->
 		<link type="text/css" rel="stylesheet" href="{% static 'css\custom.css' %}"/>
     </head>
-
-
 	<body>
 		<!-- HEADER -->
 		<header>
@@ -34,8 +32,42 @@
 						<li><a href="direccion aca"><i class="fa fa-map-marker"></i> Ciudad de Guatemala</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="{% url 'login' %}"></i> Iniciar sesión</a></li>
+						<li><a href="{% url 'login' %}"><i class="fa fa-user-o"></i> Usuario</a></li>
+					<!-- <li><a href="registrar.html"><i class="fa fa-user-o"></i> Registrar</a></li> -->
 					</ul>
+				</div>
+			</div>
+
+			<div id="header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="index.html" class="logo">
+									<img src="{% static 'img/logo.png' %}" alt="Logo TEM Store" width="50px">
+									ElectroLac
+								</a>
+							</div>
+						</div>
+
+
+						<!-- USUARIO -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								<!-- Deseos -->
+
+								<!-- Menu Toogle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /USUARIO-->
+					</div>
 				</div>
 			</div>
 		</header>
@@ -55,77 +87,28 @@
 		<!-- USUARIO -->
 		<div class="contenedor-formulario">
 			<div class="formulario-ingreso">
-				<form>
-					<div class="imagen-usuario">
-						<img src="{% static 'img/usuario.png' %}" alt="AVATAR">
-					</div>
 
-					<span class="titulo-ingreso">
-						Registrar de Usuario
-					</span>
-
-					<div class="campo-texto" data-validate = "nombres requerido">
-						<input class="input-ingreso" type="text" name="nombres" placeholder="Nombres">
-						<span></span>
-					</div>
-					<div class="campo-texto" data-validate = "Apellidos requerido">
-						<input class="input-ingreso" type="text" name="apellidos" placeholder="Apellidos">
-						<span></span>
-					</div>
-					<div class="campo-texto" data-validate = "Usuario requerido">
-						<input class="input-ingreso" type="text" name="usuario" placeholder="Usuario">
-						<span></span>
-					</div>
-
-					<div class="campo-texto" data-validate = "Usuario requerido">
-						<input class="input-ingreso" type="text" name="emailreg" placeholder="Correo Electrónico">
-						<span></span>
-					</div>
-					<div class="campo-texto" data-validate = "Contraseña requerida">
-						<input class="input-ingreso" type="password" name="pass" placeholder="Contraseña">
-						<span></span>
-					</div>
-					<div>
-						<center>
-							sexo<br>
-						<select class="campo-select_tipo" id="genero" data-validate="genero requerido">
-							<option value="masc">Masculino</option>
-							<option value="fem">Femenino</option>
-						  </select>
-						</center>
-					</div>
-
-					<div>
-						<center>
-							Tipo de usuario <br>
-						<select class="campo-select_tipo" id="tipo_usuario" data-validate="tipo requerido">
-
-							<option value="vendedor">Vendedor</option>
-							<option value="comprador">Comprador</option>
-						  </select>
-						</center>
-					</div>
-					<CENTER>
-						<div class="campo-select_tipo" data-validate="debe seleccionar una fotografia">
-							Eliga una foto de perfil.
-							<input type="file" name="f1">
+				{% block title %}Create an Account{% endblock %}
+				{% load crispy_forms_tags %}
+				
+				{% block content %}
+					<form action="{% url 'register'%}" method="POST" class="form-group">
+						<div class="imagen-usuario">
+							<img src="{% static 'img/usuario.png' %}" alt="AVATAR">
 						</div>
-					</CENTER>
-					
-					
-
-					<div>
-						<button class="boton-ingresar">
-							Registrar
-						</button>
-					</div>
-
-					<div class="crear-cuenta">
-						<a href="registrar.html">
-							¿Aún no tienes una cuenta? | Crear una cuenta					
-						</a>
-					</div>
-				</form>
+						<div class="section-title text-center">
+							<h3 class="title">Crear Cuenta</h3>
+						</div>
+						<span class="titulo-ingreso">
+							Registrar de Usuario
+						</span>
+				
+					{% csrf_token %}
+					{{ form|crispy }}
+					<button type="submit" class="btn btn-success">Register</button>
+					</form>
+				{% endblock %}
+				
 			</div>
 		</div>
 
@@ -213,3 +196,6 @@
 
 	</body>
 </html>
+
+
+

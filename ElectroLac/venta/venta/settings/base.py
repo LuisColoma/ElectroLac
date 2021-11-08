@@ -25,9 +25,8 @@ LOCAL_APPS = [
     'apps.events',
     'apps.login',
     'apps.account',
-
     'apps.registro',
-
+     'crispy_forms',
 ]
  
 THIRD_PARTY_APPS = [
@@ -35,7 +34,7 @@ THIRD_PARTY_APPS = [
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
-
+CRISPY_TEMPLATE_PACK = 'uni_form'
 AUTHENTICATION_BACKENDS = [
     # AxesBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
     'axes.backends.AxesBackend',
@@ -84,7 +83,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'venta.wsgi.application'
-
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'America/Guatemala'
 USE_I18N = True
