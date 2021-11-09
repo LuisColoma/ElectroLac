@@ -32,7 +32,7 @@
 						<li><a href="direccion aca"><i class="fa fa-map-marker"></i> Ciudad de Guatemala</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="{% url 'login' %}"><i class="fa fa-user-o"></i> Usuario</a></li>
+						<li><a href="{% url 'login' %}"><i class="fa fa-user-o"></i> Iniciar Sesión</a></li>
 					<!-- <li><a href="registrar.html"><i class="fa fa-user-o"></i> Registrar</a></li> -->
 					</ul>
 				</div>
@@ -88,7 +88,7 @@
 		<div class="contenedor-formulario">
 			<div class="formulario-ingreso">
 
-				{% block title %}Create an Account{% endblock %}
+				{% block title %}{% endblock %}
 				{% load crispy_forms_tags %}
 				
 				{% block content %}
@@ -105,7 +105,7 @@
 				
 					{% csrf_token %}
 					{{ form|crispy }}
-					<button type="submit" class="btn btn-success">Register</button>
+					<button type="submit" class="btn btn-success">Registrar</button>
 					</form>
 				{% endblock %}
 				

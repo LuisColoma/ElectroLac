@@ -17,7 +17,7 @@ from .forms import RegisterForm
 
 
 from django.shortcuts import render, redirect
-from .forms import RegisterForm
+from .forms import RegisterForm  #,RegistroForm
 
 
 # Create your views here.
@@ -26,7 +26,7 @@ def register(response):
       form = RegisterForm(response.POST)
       if form.is_valid():
          form.save()   
-         return redirect("../events/index.html")
+         return redirect("account")
    else:
          form = RegisterForm()
    return render(response, "registration/registrar.html", {"form":form})
