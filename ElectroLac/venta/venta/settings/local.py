@@ -42,9 +42,8 @@ LOGIN_REDIRECT_URL = 'account'
 
 LOGOUT_REDIRECT_URL = 'login'
 
-MEDIA_ROOT = "/Users/lcolo/Desktop/P_Final_Proyectos/ElectroLac/media"
-
 MEDIA_URL = '/media/'
 
-#AUTH_USER_MODEL = 'account.User'
+import os
 
+MEDIA_ROOT = '/Users/lcolo/Desktop/P_Final_Proyectos/ElectroLac/media'

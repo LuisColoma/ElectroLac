@@ -135,180 +135,46 @@
 				<!-- row -->
 				<div class="row">
 
-		<div class="col-md-12">
-						<div class="section-title text-center">
-							<h3 class="title">Microcontroladores</h3>
-						</div>
-					</div>
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="{% static 'img/ELEC_09.jpg' %}" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">ARDUINO</p>
-								<h3 class="product-name"><a href="#">Arduino Uno V3</a></h3>
-								<h4 class="product-price">Q 125.00</h4>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i></button>
-									<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
+								
+		<!-- <div class="col-md-12">
+						<div class="section-title text-center"> row -->
+			{% for category in categorys %}
+				<div class="col-md-12">
+					<div class="section-title text-center">
+					<h3 class="title">{{category}}</h3>
+					{% for product in products %}
+						{% if category.id == product.category.id %}
+							<div class="col-md-3 col-xs-6">
+								<div class="product">
+									<div class="product-img">
+										<!-- <img src="{product.image.url}" alt=""> -->
+										<img src="{{ product.get_photo_url }}" class="img-responsive thumbnail " alt="img">
+									</div>
+									<div class="product-body">	
+										<p class="product-category">{{category}}</p>
+										<h3 class="product-name"><a href="#">{{product.name}}</a></h3>
+										<h4 class="product-price">Q{{product.Amount}}</h4>
+										<h5 class="product-stock">Disponibilidad: {{product.stock}}</h5>
+										<div class="product-btns">
+											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i></button>
+											<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
+										</div>
 								</div>
 							</div>
 						</div>
+						{% endif %}							
+					{% endfor %}
 					</div>
-					<!-- /product -->
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="{% static 'img/ELEC_09.jpg' %}" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">PIC</p>
-								<h3 class="product-name"><a href="#">PIC 16F628A</a></h3>
-								<h4 class="product-price">Q 35.00</h4>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i></button>
-									<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
+				</div>
+			{% endfor %}							
 
-					<div class="clearfix visible-sm visible-xs"></div>
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="{% static 'img/ELEC_04.jpg' %}" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Atinny</p>
-								<h3 class="product-name"><a href="#">Atinny</a></h3>
-								<h4 class="product-price">Q 25.00</h4>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i></button>
-									<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="{% static 'img/ELEC_04.jpg' %}" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">ATMEL</p>
-								<h3 class="product-name"><a href="#">atmega 628a</a></h3>
-								<h4 class="product-price">Q 25.00</h4>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i></button>
-									<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
-
-					<div class="col-md-12">
-						<div class="section-title text-center">
-							<h3 class="title">ELectronica</h3>
-						</div>
-					</div>
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="{% static 'img/ELEC_04.jpg' %}" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">ATMEL</p>
-								<h3 class="product-name"><a href="#">atmega 628a</a></h3>
-								<h4 class="product-price">Q 25.00</h4>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i></button>
-									<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="{% static 'img/ELEC_04.jpg' %}" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">ATMEL</p>
-								<h3 class="product-name"><a href="#">atmega 628a</a></h3>
-								<h4 class="product-price">Q 25.00</h4>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i></button>
-									<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
-					<div class="clearfix visible-sm visible-xs"></div>
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="{% static 'img/ELEC_04.jpg' %}" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">ATMEL</p>
-								<h3 class="product-name"><a href="#">atmega 628a</a></h3>
-								<h4 class="product-price">Q 25.00</h4>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i></button>
-									<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="{% static 'img/ELEC_04.jpg' %}" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">ATMEL</p>
-								<h3 class="product-name"><a href="#">atmega 628a</a></h3>
-								<h4 class="product-price">Q 25.00</h4>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i></button>
-									<button class="add-to-cart"><i class="fa fa-shopping-cart"></i></button>
-								</div>
-							</div>
-						</div>
-					</div>
+		<!-- /Section -->
 					<!-- /product -->
 				</div>
 				<!-- /row -->
 			</div>
 			<!-- /container -->
 		</div>
-		<!-- /Section -->
-
 
 
 		<!-- /CONTENIDO -->
